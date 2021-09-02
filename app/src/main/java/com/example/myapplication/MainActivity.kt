@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,10 +18,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-    }
+        val mSeeMoreTV = findViewById<TextView>(R.id.seeMore)
+        val mImageTwo = findViewById<ImageView>(R.id.imageView2)
+        mSeeMoreTV.setOnClickListener {
+            mSeeMoreTV.text = ("I am a passionate, driven and committed to finish Kodecamp as one of the best")
+            mImageTwo.visibility = View.VISIBLE
+        }
 
-    fun seeMore(view: android.view.View) {
-        val intent = Intent(this, FullSceen::class.java)
-        startActivity(intent)
     }
 }
