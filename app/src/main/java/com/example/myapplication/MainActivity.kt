@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.graphics.Color
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
@@ -16,14 +17,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val mLayout = findViewById<LinearLayout>(R.id.layout_)
-        val mBirthdayImage = findViewById<ImageView>(R.id.birthdayImage)
-        val mBtn = findViewById<Button>(R.id.btn)
-        mBtn.setOnClickListener {
-            mBirthdayImage.visibility = View.VISIBLE
-            mLayout.setBackgroundColor(Color.MAGENTA)
+    }
 
-
-        }
+    fun seeMore(view: android.view.View) {
+        val intent = Intent(this, FullSceen::class.java)
+        startActivity(intent)
     }
 }
